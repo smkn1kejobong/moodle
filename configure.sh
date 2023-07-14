@@ -1,15 +1,15 @@
 #!/bin/bash
 myuser=$(whoami)
 
-sudo apt-get update
+sudo apt-get update && apt-get upgrade
 sudo apt -y install software-properties-common
 sudo apt-get update
-sudo apt-get install -y nginx apache2-utils postgresql zip unzip php7.4 php7.4-fpm php7.4-pgsql php7.4-memcache php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
+sudo apt-get install -y nginx apache2-utils postgresql-13 zip unzip php8.1 php8.1-fpm php8.1-pgsql php8.1-memcache php8.1-cli php8.1-json php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
 
-sudo systemctl start php7.4-fpm
+sudo systemctl start php8.1-fpm
 sudo systemctl start postgresql
 sudo systemctl enable nginx
-sudo systemctl enable php7.4-fpm
+sudo systemctl enable php8.1-fpm
 sudo systemctl enable postgresql
 clear
 
